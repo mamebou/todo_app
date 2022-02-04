@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/top'
   root   'tasks#index'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
