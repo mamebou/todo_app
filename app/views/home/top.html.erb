@@ -1,2 +1,24 @@
-<h1>Home#top</h1>
-<p>Find me in app/views/home/top.html.erb</p>
+<h2>タスク一覧</h2>
+<table>
+    <thead>
+      <tr>
+        <th>タスク名</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%if @user_tasks.nil?%>
+          <%link_to "タスク追加", new_task_path%>
+          <p>タスクが追加されていません</p>
+      <%else %>
+          <% @user_tasks.each do |task| %>
+            <tr>
+              <td><%= task.title %></td>
+              <td><%= link_to "編集", edit_task_path(task) %></td>
+              <td><%= link_to "削除", task_path(task), method: :delete %></td>
+            </tr>
+          <% end %>
+      <%end%>
+    </tbody>
+</table>
+<%= link_to "タスク追加", new_task_path %>
+<%= link_to "ログアウト", logout_path, method: :delete %>

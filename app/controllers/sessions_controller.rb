@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       flash[:notice] = "ログインしました"
       log_in user
-      redirect_to root_url
+      redirect_to top_path
     else
       render "new"
     end
@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
   def destroy
     log_out
     if logged_in?
-      redirect_to root_url
+      redirect_to top_path
     end
   end
 
