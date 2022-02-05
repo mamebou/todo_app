@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'home/top'
-  root   'tasks#index'
+  get   '/top',    to: 'home#top'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   get   '/signup',  to: 'sessions#signup'

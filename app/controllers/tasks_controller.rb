@@ -7,10 +7,15 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
+  def show
+    @tasks = Task.all
+  end
+
   def create
-    title = params[:title]
-    limit_date = params[:limit_date]
-    @task = Task.create(title:title, limit_date:limit_date)
+    title = params[:task][:title]
+    limit_date = params[:task][:limit_date]
+    @task = Task.create(title:title, limit_date:limit_date, user_id:session[:user_id])
+
     redirect_to tasks_path
   end
 
