@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       flash[:notice] = "ログインしました"
-      log_in user
+      session[:user_id] = user.id
       redirect_to top_path
     else
       render "new"
@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
+    session.delete(:user_id)
     if logged_in?
       redirect_to top_path
     end
