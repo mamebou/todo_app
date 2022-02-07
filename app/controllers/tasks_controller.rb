@@ -1,4 +1,7 @@
 class TasksController < ApplicationController
+
+  before_action :logged_in_user, only:[:index,:edit, :update, :destroy]
+
   def index
     @tasks = Task.all
   end
@@ -16,7 +19,7 @@ class TasksController < ApplicationController
     limit_date = params[:task][:limit_date]
     @task = Task.create(title:title, limit_date:limit_date, user_id:session[:user_id])
 
-    redirect_to tasks_path
+    redirect_to root_path
   end
 
     def edit
