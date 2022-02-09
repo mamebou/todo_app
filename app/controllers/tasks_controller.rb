@@ -17,7 +17,7 @@ class TasksController < ApplicationController
   def create
     title = params[:task][:title]
     limit_date = params[:task][:limit_date]
-    @task = Task.create(title:title, limit_date:limit_date, user_id:session[:user_id])
+    @task = Task.create(title:title, limit_date:limit_date, user_id:session[:user_id], state:"未実行")
 
     redirect_to root_path
   end
@@ -35,7 +35,7 @@ class TasksController < ApplicationController
     def destroy
        @task = Task.find(params[:id])
        @task.destroy
-       redirect_to tasks_path
+       redirect_to top_path
      end
 
      private
