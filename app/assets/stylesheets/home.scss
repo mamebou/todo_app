@@ -41,12 +41,40 @@ body {
     padding: 5px;
   }
 
+  .edit_button:hover{
+    transition: 0.3s; /*変化する秒数*/
+    transform: translateY(0.1875em); /*縦方向に移動する*/
+    box-shadow:none; /*影を消す*/
+}
+
+
+
 .delete_button {
   width: 50px;
   height: 50px;
   background-color: #ff7f7f;
   font-size: 15px;
   padding: 5px}
+
+  .delete_button:hover{
+    transition: 0.3s; /*変化する秒数*/
+    transform: translateY(0.1875em); /*縦方向に移動する*/
+    box-shadow:none; /*影を消す*/
+}
+
+  .tran_b{
+    width: 50px;
+    height: 50px;
+    background-color: #ff7f7f;
+    font-size: 15px;
+    padding: 5px
+  }
+
+  .tran_b:hover{
+    transition: 0.3s; /*変化する秒数*/
+    transform: translateY(0.1875em); /*縦方向に移動する*/
+    box-shadow:none; /*影を消す*/
+}
 
   .delete_link{
     padding: 5px
@@ -60,6 +88,12 @@ body {
   width: 100px;
   height: 50px;
   background-color: #89ff89;
+}
+
+.new_task_button:hover{
+  transition: 0.3s; /*変化する秒数*/
+  transform: translateY(0.1875em); /*縦方向に移動する*/
+  box-shadow:none; /*影を消す*/
 }
 
 .logout_button{

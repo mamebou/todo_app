@@ -18,6 +18,7 @@
                 <td class = "task_name"><%= task.title %></td>
                 <td class = "limit_date"><%= task.limit_date%></td>
                 <td class = "state"><%= task.state%></td>
+                <td><%= button_to "実行", home_state_path, { method: :get, class: "tran_b", params: {id: task.id }} %></td>
                 <td class = "edit_link"><button class = "edit_button"><%= link_to "編集", edit_task_path(task) %></button></td>
                 <td class = "delete_link"><button class = "delete_button"><%= link_to "削除", task_path(task), method: :delete %></button></td>
               </tr>
