@@ -24,4 +24,8 @@ class HomeController < ApplicationController
     @doing_tasks = @tasks.where(user_id:session[:user_id]).where(state:"実行中")
   end
 
+  def done
+    @tasks = all_tasks
+    @done_tasks = @tasks.where(user_id:session[:user_id]).where(state:"実行済み")
+  end
 end
