@@ -1,9 +1,9 @@
 <h1>新規タスク</h1>
 <%= form_for(@task) do |f| %>
-  <div><%= f.label :title %></div>
-  <div><%= f.text_field :title %></div>
-  <div><%= f.label :limit_date %></div>
-  <div><%= f.date_select :limit_date %></div>
+  <div class = "label"><%= f.label "新規タスク名" %></div>
+  <div class = "field"><%= f.text_field :title %></div>
+  <div class = "label"><%= f.label "実行期限" %></div>
+  <div class = "field"><%= f.date_field :limit_date %></div>
   <div><%= f.submit "タスク登録" %></div>
 <% end %>
-<%= link_to '戻る', tasks_path %>
+<%= link_to '戻る', top_path %>

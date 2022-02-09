@@ -1,3 +1,69 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background: #f0f8ff;
+}
+
+.task_recode{
+  width: 100%;
+  background: #7fffbf;
+}
+
+.task_name{
+  width: 40%;
+  margin-right: 100px
+}
+
+.limit_date{
+  width: 50%;
+  margin-right: 100px
+}
+
+.state{
+  width: 40%;
+  margin-right: 100px
+}
+
+.all_tasks {width: 300px;
+  height: 29px;
+  padding-left: 40%;
+  margin: 5%;
+}
+
+.edit_button {
+  width: 50px;
+  height: 50px;
+  background-color: #ffff9e;
+  font-size: 15px;
+  padding: 5px}
+  .edit_link{
+    padding: 5px;
+  }
+
+.delete_button {
+  width: 50px;
+  height: 50px;
+  background-color: #ff7f7f;
+  font-size: 15px;
+  padding: 5px}
+
+  .delete_link{
+    padding: 5px
+  }
+
+.table{
+  width: 100%;
+}
+
+.new_task_button{
+  width: 100px;
+  height: 50px;
+  background-color: #89ff89;
+}
+
+.logout_button{
+  width: 100px;
+  height: 50px;
+  background-color: red;
+}
