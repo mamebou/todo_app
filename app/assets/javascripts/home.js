@@ -1,3 +1,3 @@
-function stateTransition() {
+function stateTransition(id) {
   alert("ボタンがクリックされました！");
 }
