@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root  'home#top'
   get   '/top',    to: 'home#top'
+  get   '/doing',  to: 'home#doing'
   get   'home/state',   to: 'home#state'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
