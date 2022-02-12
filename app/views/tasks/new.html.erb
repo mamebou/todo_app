@@ -2,6 +2,8 @@
 <%= form_for(@task) do |f| %>
   <div class = "label"><%= f.label "新規タスク名" %></div>
   <div class = "field"><%= f.text_field :title %></div>
+  <div class = "label"><%= f.label "タスク詳細" %></div>
+  <div class = "field"><%= f.text_field :detail %></div>
   <div class = "label"><%= f.label "実行期限" %></div>
   <div class = "field"><%= f.date_field :limit_date %></div>
   <div><%= f.submit "タスク登録" %></div>
