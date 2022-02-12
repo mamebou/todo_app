@@ -62,6 +62,19 @@ body {
     box-shadow:none; /*影を消す*/
 }
 
+.detail_button {
+  width: 50px;
+  height: 50px;
+  background-color: 	#FF8856;
+  font-size: 15px;
+  padding: 5px}
+
+  .detail_button:hover{
+    transition: 0.3s; /*変化する秒数*/
+    transform: translateY(0.1875em); /*縦方向に移動する*/
+    box-shadow:none; /*影を消す*/
+}
+
   .tran_b{
     width: 50px;
     height: 50px;
