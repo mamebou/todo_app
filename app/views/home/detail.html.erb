@@ -1,0 +1,15 @@
+<table class = "detail_table">
+  <tr class = "detail_tr">
+    <th class = "detail_th">タスク名</th>
+    <td class = "detail_td"><%=@task.title%></td>
+  </tr>
+  <tr class = "detail_tr">
+    <th class = "detail_th">詳細</th>
+    <td class = "detail_td"><%=@task.detail%></td>
+  </tr>
+  <tr class = "detail_tr">
+    <th class = "detail_th">期限</th>
+    <td class = "detail_td"><%=@task.limit_date%></td>
+  </tr>
+</table>
+<%= link_to '戻る', top_path %>

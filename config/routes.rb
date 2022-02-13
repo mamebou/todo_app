@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root  'home#top'
   get   '/top',    to: 'home#top'
+  get   '/detail', to: 'home#detail'
+  post   '/detail', to: 'home#detail'
   get   '/doing',  to: 'home#doing'
   get   '/done',   to: 'home#done'
   get   'home/state',   to: 'home#state'
