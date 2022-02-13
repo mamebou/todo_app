@@ -20,7 +20,7 @@ class TasksController < ApplicationController
     detail = params[:task][:detail]
     @task = Task.create(title:title, limit_date:limit_date, user_id:session[:user_id], state:"未実行", detail: detail)
 
-    redirect_to root_path
+    redirect_to top_path
   end
 
     def edit
@@ -37,10 +37,10 @@ class TasksController < ApplicationController
        @task = Task.find(params[:id])
        @task.destroy
        redirect_to top_path
-     end
+    end
 
      private
        def task_params
-         params.require(:task).permit(:title,:limit_date)
+         params.require(:task).permit(:title,:limit_date,:detail)
        end
 end

@@ -19,7 +19,7 @@
                 <td class = "limit_date"><%= task.limit_date%></td>
                 <td class = "state"><%= task.state%></td>
                 <td><%= button_to "実行", home_state_path, { method: :get, class: "tran_b", params: {id: task.id }} %></td>
-                <td><%= button_to "詳細", edit_task_path(task), { method: :get, class: "detail_button"} %></td>
+                <td><%= button_to "詳細", detail_path, { method: :get, class: "detail_button", params: {id: task.id }} %></td>
                 <td><%= button_to "編集", edit_task_path(task), { method: :get, class: "edit_button"} %></td>
                 <td><%= button_to "削除", task_path(task), { method: :delete, class: "delete_button"} %></td>
               </tr>
