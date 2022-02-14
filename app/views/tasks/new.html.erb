@@ -1,5 +1,5 @@
 <div class="input">
-  <h1>新規タスク</h1>
+  <h1 align="center">新規タスク</h1>
   <%= form_for(@task) do |f| %>
     <div class="text-input">
       <%= f.label "新規タスク名" %>
@@ -16,7 +16,7 @@
       <%= f.date_field :limit_date, class: "field", id: "limit_date" %>
       <div class="text_underline"></div>
     </div>
-    <div><%= f.submit "タスク登録" %></div>
+    <%= f.submit "タスク登録",class: "task_register_button" %>
   <% end %>
-   <button type="button" onclick="history.back()">戻る</button>
+   <button type="button" onclick="history.back()" class="back_button">戻る</button>
 </div>
