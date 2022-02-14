@@ -9,6 +9,4 @@
   <div><%= f.text_field :limit_date %></div>
   <div><%= f.submit %></div>
 <% end %>
-<%=@task.user_id%>
-<%=session[:user_id]%>
-<%= link_to '戻る', top_path %>
+<button type="button" onclick="history.back()">戻る</button>

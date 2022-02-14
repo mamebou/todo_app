@@ -1,4 +1,4 @@
-<h1 class="all_tasks">タスク一覧</h1>
+<h1 class="all_tasks">対応済み</h1>
 <%if @done_tasks.nil?%>
     <%link_to "タスク追加", new_task_path%>
     <p>タスクが追加されていません</p>
@@ -21,10 +21,10 @@
                   <td><%= button_to "詳細", detail_path, { method: :get, class: "detail_button", params: {id: task.id }} %></td>
               </tr>
             <% end %>
-        <%end%>
       </tbody>
   </table>
 </div>
+<%end%>
 
 <button class = "new_task_button"><%= link_to "タスク追加", new_task_path %></button>
 <button class = "logout_button"><%= link_to "ログアウト", logout_path, method: :delete %></button>
