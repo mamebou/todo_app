@@ -1,12 +1,22 @@
-
-<h1>タスク編集</h1>
-<%= form_for(@task) do |f| %>
-  <div><%= f.label :title %></div>
-  <div><%= f.text_field :title %></div>
-  <div><%= f.label :detail %></div>
-  <div><%= f.text_field :detail %></div>
-  <div><%= f.label :limit_date %></div>
-  <div><%= f.text_field :limit_date %></div>
-  <div><%= f.submit %></div>
-<% end %>
-<button type="button" onclick="history.back()">戻る</button>
+<div class="input">
+  <h1 align="center">タスク編集</h1>
+  <%= form_for(@task) do |f| %>
+    <div class="text-input">
+      <%= f.label "タスク名" %>
+      <%= f.text_field :title, class: "field", id: "title" %>
+      <div class="text_underline"></div>
+    </div>
+    <div class="text-input">
+      <%= f.label "タスク詳細" %>
+      <%= f.text_area :detail, class: "field", id: "detail" %>
+      <div class="text_underline"></div>
+    </div>
+    <div class="text-input">
+      <%= f.label "実行期限" %>
+      <%= f.date_field :limit_date, class: "field", id: "limit_date" %>
+      <div class="text_underline"></div>
+    </div>
+    <%= f.submit "タスク更新",class: "task_register_button" %>
+  <% end %>
+   <button type="button" onclick="history.back()" class="back_button">戻る</button>
+</div>

@@ -1,8 +1,9 @@
 <h1 class="all_tasks">対応済み</h1>
-<%if @done_tasks.nil?%>
+<%if @done_tasks.count()==0%>
     <%link_to "タスク追加", new_task_path%>
-    <p>タスクが追加されていません</p>
+    <p>対応中のタスクはありません</p>
 <%else %>
+<%= button_to "タスク追加", new_task_path, { method: :get, class: "new_task_button"} %>
 <div class="table">
   <table>
       <thead>
@@ -26,5 +27,4 @@
 </div>
 <%end%>
 
-<button class = "new_task_button"><%= link_to "タスク追加", new_task_path %></button>
-<button class = "logout_button"><%= link_to "ログアウト", logout_path, method: :delete %></button>
+<%= button_to "ログアウト", logout_path, { method: :delete, class: "logout_button"} %>
