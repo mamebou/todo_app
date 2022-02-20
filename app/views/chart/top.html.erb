@@ -1,0 +1,9 @@
+<h1 class="title">進行状況</h1>
+<div class="state_status">
+  <h2 class="state_status_title">状況別</h2>
+  <%= pie_chart @user_tasks.group(:state).where.not(state: nil).count %>
+</div>
+<div class="limit_date_status">
+  <h2 class="limit_date_status_title">日別タスク数</h2>
+  <%= column_chart @user_tasks.group(:limit_date).where.not(limit_date: nil).count %>
+</div>
