@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'home#first'
   get 'chart/top', to:'chart#top'
   get   '/top',    to: 'home#top'
   get   '/detail', to: 'home#detail'
