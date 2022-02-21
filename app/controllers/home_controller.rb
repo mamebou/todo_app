@@ -1,7 +1,18 @@
 class HomeController < ApplicationController
+
+  before_action :logged_in_user
+  
   def top
     @tasks = all_tasks
     @user_tasks = @tasks.where(user_id:session[:user_id]).where(state:"未実行")
+  end
+
+  def first
+    if session[:user_id].nil?
+      redirect_to login_path
+    else
+      redirect_to top_path
+    end
   end
 
   def state
@@ -23,7 +34,7 @@ class HomeController < ApplicationController
     @doing_tasks = @tasks.where(user_id:session[:user_id]).where(state:"実行中")
   end
 
-  def detail    
+  def detail
     @task = Task.find(params[:id])
   end
 

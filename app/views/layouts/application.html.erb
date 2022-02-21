@@ -9,8 +9,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
   <body>
     <header>
+      <%if !session[:user_id].nil? %>
       <nav>
         <ul>
         <li><a href=/top>未対応</a></li>
@@ -19,6 +21,7 @@
         <li><a href="chart/top">進行状況</a></li>
         </ul>
       </nav>
+      <%end%>
     </header>
     <%= yield %>
   </body>
