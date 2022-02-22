@@ -14,7 +14,8 @@ class BoardsController < ApplicationController
 
   def create
     title = params[:board][:title]
-    @board = Board.create(title:title, user_id:session[:user_id])
+    detail = params[:board][:title]
+    @board = Board.create(title:title, user_id:session[:user_id],detail: detail)
 
     redirect_to board_top_path
   end
