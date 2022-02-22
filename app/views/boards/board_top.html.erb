@@ -1,0 +1,16 @@
+<div class="board_ui">
+  <%= button_to "ボード追加", new_board_path, { method: :get, class: "new_task_button"} %>
+</div>
+<ul class="grid cards">
+  <%@user_boards.each do |board|%>
+    <li>
+      <h4><%=board.title%></h4>
+      <p>詳細情報</p>
+      <ul class="operate_button">
+        <li>  <%= button_to "開く", home_state_path, { method: :get, class: "tran_b", params: {id: board.id }} %></li>
+        <li><%= button_to "編集", edit_board_path(board), { method: :get, class: "edit_button"} %></li>
+        <li><%= button_to "削除", board_path(board), { method: :delete, class: "delete_button"} %></li>
+      </ul>
+    </li>
+  <%end%>
+</ul>

@@ -1,0 +1,12 @@
+<div class="input">
+  <h1 align="center">新規ボード</h1>
+  <%= form_for(@board) do |f| %>
+    <div class="text-input">
+      <%= f.label "新規ボード名" %>
+      <%= f.text_field :title, class: "field", id: "title" %>
+      <div class="text_underline"></div>
+    </div>
+    <%= f.submit "ボード追加",class: "task_register_button" %>
+  <% end %>
+   <button type="button" onclick="history.back()" class="back_button">戻る</button>
+</div>
