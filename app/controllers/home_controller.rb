@@ -1,10 +1,13 @@
 class HomeController < ApplicationController
 
   before_action :logged_in_user
-  
+
   def top
+    if session[:board_id].nil?
+      session[:board_id] = params[:id]
+    end
     @tasks = all_tasks
-    @user_tasks = @tasks.where(user_id:session[:user_id]).where(state:"未実行")
+    @user_tasks = @tasks.where(user_id:session[:user_id]).where(state:"未実行").where(board_num:session[:board_id])
   end
 
   def first
@@ -31,7 +34,7 @@ class HomeController < ApplicationController
 
   def doing
     @tasks = all_tasks
-    @doing_tasks = @tasks.where(user_id:session[:user_id]).where(state:"実行中")
+    @doing_tasks = @tasks.where(user_id:session[:user_id]).where(state:"実行中").where(board_num:session[:board_id])
   end
 
   def detail
@@ -40,6 +43,6 @@ class HomeController < ApplicationController
 
   def done
     @tasks = all_tasks
-    @done_tasks = @tasks.where(user_id:session[:user_id]).where(state:"実行済み")
+    @done_tasks = @tasks.where(user_id:session[:user_id]).where(state:"実行済み").where(board_num:session[:board_id])
   end
 end
