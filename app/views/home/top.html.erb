@@ -3,8 +3,10 @@
     <%link_to "タスク追加", new_task_path%>
     <p>未対応のタスクはありません</p>
     <%= button_to "タスク追加", new_task_path, { method: :get, class: "new_task_button"} %>
+    <%= button_to "ボード一覧に戻る", board_top_path, { method: :get, class: "new_task_button"} %>
 <%else %>
 <%= button_to "タスク追加", new_task_path, { method: :get, class: "new_task_button"} %>
+<%= button_to "ボード一覧に戻る", board_top_path, { method: :get, class: "new_task_button"} %>
 <div class="table">
   <table>
       <thead>

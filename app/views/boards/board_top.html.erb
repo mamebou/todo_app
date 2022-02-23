@@ -8,7 +8,7 @@
       <h3>詳細情報</h3>
       <p><%=board.detail%></p>
       <ul class="operate_button">
-        <li>  <%= button_to "開く", home_state_path, { method: :get, class: "tran_b", params: {id: board.id }} %></li>
+        <li>  <%= button_to "開く", top_path, { method: :get, class: "tran_b", params: {id: board.id }} %></li>
         <li><%= button_to "編集", edit_board_path(board), { method: :get, class: "edit_button"} %></li>
         <li><%= button_to "削除", board_path(board), { method: :delete, class: "delete_button"} %></li>
       </ul>
