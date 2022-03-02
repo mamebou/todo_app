@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
 
   before_action :logged_in_user, only:[:index,:edit, :update, :destroy]
+  before_action :in_board
 
   def index
     @tasks = Task.all

@@ -12,7 +12,7 @@
 
   <body>
     <header>
-      <%if !session[:user_id].nil? %>
+      <%if !session[:user_id].nil? && session[:on_board]==false%>
       <nav>
         <ul>
         <li><a href=/top>未対応</a></li>

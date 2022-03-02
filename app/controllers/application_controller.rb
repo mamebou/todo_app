@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
   include TasksHelper
+  include BoardHelper
 
   private
    # ログイン済みユーザーかどうか確認

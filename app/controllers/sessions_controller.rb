@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   before_action :logged_in_user, only:[:edit, :update, :destroy]
+  before_action :in_board
 
   def new
   end

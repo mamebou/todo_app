@@ -1,5 +1,7 @@
 class BoardsController < ApplicationController
 
+  before_action :on_board
+
   def new
     @board = Board.new
   end
