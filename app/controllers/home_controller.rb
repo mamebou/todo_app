@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
 
   before_action :logged_in_user
+  before_action :in_board
 
   def top
     if session[:board_id].nil?
