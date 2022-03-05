@@ -8,7 +8,7 @@ class HomeController < ApplicationController
       session[:board_id] = params[:id]
     end
     @tasks = all_tasks
-    @user_tasks = @tasks.where(user_id:session[:user_id]).where(state:"未実行").where(board_num:session[:board_id])
+    @user_tasks = @tasks.where(user_id:session[:user_id].to_i).where(state:"未実行").where(board_num:session[:board_id])
   end
 
   def first
@@ -35,7 +35,7 @@ class HomeController < ApplicationController
 
   def doing
     @tasks = all_tasks
-    @doing_tasks = @tasks.where(user_id:session[:user_id]).where(state:"実行中").where(board_num:session[:board_id])
+    @doing_tasks = @tasks.where(user_id:session[:user_id].to_i).where(state:"実行中").where(board_num:session[:board_id].to_i)
   end
 
   def detail
@@ -44,6 +44,6 @@ class HomeController < ApplicationController
 
   def done
     @tasks = all_tasks
-    @done_tasks = @tasks.where(user_id:session[:user_id]).where(state:"実行済み").where(board_num:session[:board_id])
+    @done_tasks = @tasks.where(user_id:session[:user_id].to_i).where(state:"実行済み").where(board_num:session[:board_id].to_i)
   end
 end

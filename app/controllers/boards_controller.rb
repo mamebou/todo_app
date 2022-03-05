@@ -17,7 +17,7 @@ class BoardsController < ApplicationController
   def create
     title = params[:board][:title]
     detail = params[:board][:detail]
-    @board = Board.create(title:title, user_id:session[:user_id],detail: detail)
+    @board = Board.create(title:title, user_id:session[:user_id].to_i,detail: detail)
 
     redirect_to board_top_path
   end
@@ -26,7 +26,7 @@ class BoardsController < ApplicationController
     if session[:board_id].present?
       session[:board_id] = nil
     end
-    @user_boards = Board.where(user_id:session[:user_id])
+    @user_boards = Board.where(user_id:session[:user_id].to_i)
   end
 
   def update
