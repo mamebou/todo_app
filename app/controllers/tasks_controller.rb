@@ -19,7 +19,7 @@ class TasksController < ApplicationController
     title = params[:task][:title]
     limit_date = params[:task][:limit_date]
     detail = params[:task][:detail]
-    @task = Task.create(title:title, limit_date:limit_date, user_id:session[:user_id], state:"未実行", detail: detail,board_num:session[:board_id])
+    @task = Task.create(title:title, limit_date:limit_date, user_id:session[:user_id].to_i, state:"未実行", detail: detail,board_num:session[:board_id].to_i)
 
     redirect_to top_path
   end
